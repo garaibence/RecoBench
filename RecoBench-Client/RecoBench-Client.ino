@@ -14,11 +14,9 @@ data_struct myData;
 // callback function that will be executed when data is received
 void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
   memcpy(&myData, incomingData, sizeof(myData));
-  Serial.print(myData.t);
-  Serial.print(",");
-  Serial.print(myData.sine);
-  Serial.print(",");
-  Serial.println(myData.cosine);
+  Serial.print("Time: " + (String)myData.t + ",");
+  Serial.print("Sine: " + (String)myData.sine + ",");
+  Serial.print("Cosine: " + (String)myData.cosine + ",");
 }
  
 void setup() {
